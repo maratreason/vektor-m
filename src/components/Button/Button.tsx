@@ -2,12 +2,13 @@ import React from "react";
 import "./Button.scss";
 
 interface ButtonType {
-	title: string;
+	title?: string;
 	type?: string;
+	onClickHandle?: () => void;
 }
 
-const Button = ({ title, type = ""}: ButtonType) => {
-	return <button className={type ? `btn btn-${type}` : "btn"}>{title}</button>;
+const Button = ({ title, type = "", onClickHandle}: ButtonType) => {
+	return <button onClick={onClickHandle} className={type ? `btn btn-${type}` : "btn"}>{title}</button>;
 };
 
 export default Button;

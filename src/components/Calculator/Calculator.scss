@@ -112,13 +112,18 @@
                     position: absolute;
                     right: 10px;
                     top: 12px;
-                    padding: 0px 4px;
+                    padding: 2px 6px;
                     border-radius: 50%;
                     font-size: 12px;
                     background: #fff;
                     border: 1px solid #444;
                     color: #444;
                     font-weight: 400;
+                    &:hover {
+                        background: #f09c01;
+                        border-color: #f09c01;
+                        color: #fff;
+                    }
                 }
             }
             .calc__bottommenu-sum {
@@ -136,6 +141,10 @@
     color: #444;
     padding: 40px;
     border: 1px solid #aaa;
+    display: none;
+    &.active {
+        display: block;
+    }
     .calc__content-title {
         font-size: 1.75rem;
         margin-bottom: 1rem;
@@ -143,6 +152,7 @@
 
     .calc__content-wrapper {
         display: flex;
+        justify-content: space-between;
         .calc__content-sitebar {
             background: #fff;
             padding: 10px 20px 20px;
@@ -162,6 +172,7 @@
                     .calc__postitem {
                         display: flex;
                         align-items: center;
+                        cursor: pointer;
                         .calc__postitem-round {
                             width: 15px;
                             height: 15px;
@@ -203,7 +214,6 @@
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
-                background-image: url(../../assets/calc/post-images/1-post.png);
                 height: 400px;
                 background-color: #fff;
             }
@@ -216,3 +226,67 @@
     justify-content: flex-end;
     margin: 30px 0;
 }
+
+.calc__content-item {
+    background: #fff;
+    padding: 20px 10px;
+    flex-grow: 1;
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .calc__content-item-row {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        .calc__content-item-sum {
+            color: #444;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+    .calc__content-item--title {
+        margin-bottom: 20px;
+        font-weight: 500;
+        margin: 0 10px;
+        font-size: 18px;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .calc__content-item-wrapper {
+        font-size: 14px;
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        padding: 3px 0;
+        font-weight: 500;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        .calc__content-item-label {
+
+        }
+
+        .calc__content-item-help {
+            cursor: pointer;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-size: 12px;
+            background: #fff;
+            color: #f09c01;
+            border: 1px solid #f09c01;
+            font-weight: 400;
+            &:hover {
+                background: #f09c01;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
