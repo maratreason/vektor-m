@@ -1,0 +1,38 @@
+.btn {
+    outline: none;
+    border-radius: 0;
+    color: #000;
+    text-transform: uppercase;
+    transition: ease 0.3s all;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 15px 20px 15px 20px;
+    background: #eee;
+    position: relative;
+    border: none;
+    border-left: 4px solid #f09c01;
+    cursor: pointer;
+
+    &.btn-secondary {
+        background: #f09c01 !important;
+        color: #fff;
+    }
+
+    &.btn-primary {
+        background: #fafafa !important;
+        color: #000;
+        &:hover {
+            background: #f09c01 !important;
+        }
+    }
+
+    &:hover {
+        background: #f09c01;
+        color: #fff;
+    }
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+}
