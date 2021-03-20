@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Select.scss";
-import shevronIcon from "../../assets/calc/chevron-down.png";
+import shevronIcon from "../../../assets/calc/chevron-down.png";
 
 const Select = () => {
     const [currentValue, setCurrentValue] = useState<number>(0);

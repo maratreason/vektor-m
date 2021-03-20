@@ -268,24 +268,6 @@
         .calc__content-item-label {
 
         }
-
-        .calc__content-item-help {
-            cursor: pointer;
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            padding: 2px 6px;
-            border-radius: 50%;
-            font-size: 12px;
-            background: #fff;
-            color: #f09c01;
-            border: 1px solid #f09c01;
-            font-weight: 400;
-            &:hover {
-                background: #f09c01;
-                color: #fff;
-            }
-        }
     }
 }
 

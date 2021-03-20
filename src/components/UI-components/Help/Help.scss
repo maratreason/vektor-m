@@ -1,0 +1,39 @@
+.help {
+    position: relative;
+  .help__icon {
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    background: #fff;
+    color: #f09c01;
+    border: 1px solid #f09c01;
+    font-weight: 400;
+    cursor: pointer;
+    &:hover {
+      background: #f09c01;
+      color: #fff;
+    }
+  }
+
+  .help__modal {
+      position: absolute;
+      width: 300px;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      background: #fff;
+      border: 1px solid #444;
+      color: #444;
+      padding: 10px;
+      font-size: 12px;
+      z-index: 2;
+
+      &.active {
+          display: block;
+      }
+  }
+}

@@ -7,13 +7,15 @@ import moyka3 from "../../assets/calc/car-wash-system.svg";
 import moyka4 from "../../assets/calc/car-repair.svg";
 import moyka5 from "../../assets/calc/car-house.svg";
 
-import Button from "../Button/Button";
 import { checkPostNumber, setBottomMenuStep, checkConsolePost } from "../../store/action-creators/calc";
-import Select from "../Select/Select";
-import CalcButton from "../CalcButton/CalcButton";
+import Button from "../UI-components/Button/Button";
+import CalcGroupBlock from "../UI-components/CalcGroupBlock";
 
 const Calculator: React.FC = () => {
     const {step, posts, consolePosts} = useSelector((state: any) => state.calc);
+    const {step2} = useSelector((state: any) => state.calc.steps);
+    console.log("step2", step2.items);
+
     const dispatch = useDispatch();
 
     const setStep = (step: number) => {
@@ -171,115 +173,16 @@ const Calculator: React.FC = () => {
         <div className={step === 2 ? "calc__content active" : "calc__content"}>
             <div className="calc__content-title">Пульты</div>
             <div className="calc__content-wrapper">
-
-                <div className="calc__content-item">
-                    <div className="calc__content-item--title">Стандарт</div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Количество пультов</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <Select />
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Функции поста</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">В пульт входят</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-sum">0₽</div>
-                    </div>
-                </div>
-
-                <div className="calc__content-item">
-                    <div className="calc__content-item--title">Премиум</div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Количество пультов</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <Select />
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Функции поста</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">В пульт входят</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-sum">0₽</div>
-                    </div>
-                </div>
-
-                <div className="calc__content-item">
-                    <div className="calc__content-item--title">Люкс</div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Количество пультов</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <Select />
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">Функции поста</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-wrapper">
-                            <div className="calc__content-item-label">В пульт входят</div>
-                            <div className="calc__content-item-help">?</div>
-                        </div>
-                        <div className="calc__content-item-wrapper">
-                            <CalcButton />
-                            <CalcButton />
-                            <CalcButton />
-                        </div>
-                    </div>
-                    <div className="calc__content-item-row">
-                        <div className="calc__content-item-sum">0₽</div>
-                    </div>
-                </div>
-
+                {
+                    step2.items.map((step: any | undefined) => {
+                        return <CalcGroupBlock
+                            key={step.id}
+                            sum={step.total_price} 
+                            title={step.title} 
+                            rows={step.rows}
+                        />
+                    })
+                }
             </div>
         </div>
         <div className={step === 3 ? "calc__content active" : "calc__content"}>
