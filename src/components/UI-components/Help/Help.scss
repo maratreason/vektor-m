@@ -1,5 +1,5 @@
 .help {
-    position: relative;
+  position: relative;
   .help__icon {
     position: absolute;
     right: 0px;
@@ -19,21 +19,21 @@
   }
 
   .help__modal {
-      position: absolute;
-      width: 300px;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: none;
-      background: #fff;
-      border: 1px solid #444;
-      color: #444;
-      padding: 10px;
-      font-size: 12px;
-      z-index: 2;
+    position: absolute;
+    width: 300px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background: #fff;
+    border: 1px solid #444;
+    color: #444;
+    padding: 10px;
+    font-size: 12px;
+    z-index: 2;
 
-      &.active {
-          display: block;
-      }
+    &.active {
+      display: block;
+    }
   }
 }

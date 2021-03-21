@@ -8,14 +8,16 @@ interface CalcButtonProps {
   title: string;
   check: boolean;
   buttonId: number;
+  setShowModal: (bool: boolean) => void;
 }
 
 const CalcButton = (props: CalcButtonProps) => {
   const dispatch = useDispatch();
-  const { title, check, buttonId } = props;
+  const { title, check, buttonId, setShowModal } = props;
 
   const toggleClickHandler = (id: number): void => {
     dispatch(checkCalcButton(id));
+    setShowModal(true);
   };
 
   return (

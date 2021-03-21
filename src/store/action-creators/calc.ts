@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { CalcAction, CalcActionTypes, checkedButtonType } from "../../types/calc";
+import { CalcAction, CalcActionTypes } from "../../types/calc";
 
 export const setBottomMenuStep = (step: number) => (dispatch: Dispatch<CalcAction>) => {
   dispatch({ type: CalcActionTypes.SET_BOTTOM_MENU_STEP, payload: step });

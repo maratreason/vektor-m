@@ -9,10 +9,11 @@ interface CalcGroupRowProps {
   select?: boolean;
   calcButtons?: any[] | undefined;
   helpText?: string;
+  setShowModal: (bool: boolean) => void;
 }
 
 const CalcGroupRow = (props: CalcGroupRowProps) => {
-  const { label, help, helpText, select, calcButtons } = props;
+  const { label, help, helpText, select, calcButtons, setShowModal } = props;
   return (
     <div className="calc__content-item-row">
       <div className="calc__content-item-wrapper">
@@ -23,7 +24,13 @@ const CalcGroupRow = (props: CalcGroupRowProps) => {
       <div className="calc__content-item-wrapper">
         {calcButtons &&
           calcButtons.map((button) => (
-            <CalcButton key={button.caption} title={button.caption} check={button.check} buttonId={button.id} />
+            <CalcButton
+              key={button.caption}
+              title={button.caption}
+              check={button.check}
+              buttonId={button.id}
+              setShowModal={setShowModal}
+            />
           ))}
       </div>
     </div>
